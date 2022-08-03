@@ -8,9 +8,13 @@
     <h1 class="title"> {{titulo}} </h1>
     <hr>
     <br>
-    <h2> {{mensaje}} </h2>
-    <p>Proyecto elaborado para el Curso de Lenguaje de Programacion III</p>
-    <p>Dirigido por Flor Elizabeth Cerdan Leon</p>
-    <HR>
+    <ul>
+        {% for curso in cursos %}
+        <li>
+            <h4>{{curso.idcourse}} - {{curso.name}} - {{curso.hour}}</h4>
+            <a href="{% url 'eliminar_curso' id=curso.idcourse %}">Eliminar</a>
+        </li>
+        {% endfor%}
+    </ul>
 
 {% endblock %}
